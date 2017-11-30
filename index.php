@@ -4,19 +4,34 @@
 	  	<div class="mySlides fade">
 	    	<div class="numbertext">1 / 3</div>
 	    	<img src="_img/img-3.jpg" style="width:100%">
-	    	<div class="text">Bright, Well Lit Interior Shots</div>
+	    	<div class="text">
+	    			bright, even lit interiors
+	    			<div class="caption">
+	    				Newburyport, MA
+	    			</div>
+	    	</div>
 	  	</div>
 
 	  	<div class="mySlides fade">
 	    	<div class="numbertext">2 / 3</div>
 	    	<img src="_img/img-2.jpg" style="width:100%">
-	    	<div class="text">Caption Two</div>
+	    	<div class="text">  
+				compelling aerial images
+    			<div class="caption">
+    				Harpswell, ME
+    			</div>
+	    	</div>
 	  	</div>
 
 	  	<div class="mySlides fade">
 	    	<div class="numbertext">3 / 3</div>
 	    	<img src="_img/img-1.jpg" style="width:100%">
-	    	<div class="text">Caption Three</div>
+	    	<div class="text">
+	    			tasteful exteriors, incorporating environment
+	    			<div class="caption">
+	    				Auburn, ME
+	    			</div>
+	    	</div>
 	  	</div>
 
 	  	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -50,6 +65,7 @@
 </section>
 
 <section class="cta row">
+	<a href="#contact" name="contact"></a>
 	<img src="_img/cta.jpg" alt="" class="fill">
 	<span class="more">
 		<a href="" class="activate">
@@ -57,18 +73,23 @@
 		</a>
 		<form action="" id="contact">
 			<h3>Send me a Message!</h3>
-			<input type="text" placeholder="Name">
-			<input type="email" placeholder="Email">
-			<input type="text" placeholder="Phone Number">
-			<input type="text" placeholder="Address">
+			<input id="name" type="text" placeholder="Name">
+			<input id="email" type="email" placeholder="Email">
+			<input id="phone" type="text" placeholder="Phone Number">
+			<input id="address" type="text" placeholder="Address">
 			<h4>- Message -</h4>
-			<textarea>
+			<textarea id="message">
 				
 			</textarea>
 			<a href="#" id="submit">Submit</a>
 		</form>
 	</span>
 </section>
+
+<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+</script>
 
 
 

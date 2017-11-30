@@ -4,6 +4,7 @@
 	<title></title>
 	<meta name="viewport" content="width=device-width, intial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="_css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -13,12 +14,12 @@
 			<a href="#">
 			</a>
 		</div>
-		<div class="menu col-8-small">
+		<div class="menu col-5-medium col-medium-offset-3">
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">home</a></li>
+					<li><a href="#">about</a></li>
+					<li><a id="contact-link" name="contact-link" href="#">contact</a></li>
 				</ul>
 			</nav>
 		</div>
