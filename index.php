@@ -48,7 +48,8 @@
 
 <section class="info row">
 
-	<div class="pane col-5-small ">
+	<div class="wrap">
+		<div class="pane col-5-small ">
 		<div class="thumbnailwrap">
 			<img src="_img/img-1-2.jpg" alt="" class="thumbnail">
 		</div>
@@ -62,11 +63,13 @@
 		<h2>Aerial Shoots</h2>
 		<p>A new angle often makes a compelling photograph. With the power of flight, we're able to capture the most compelling images that offer an unique perspective. Aerial photography is becoming an industry standard and is a fantastic way to offer more to your buyer or seller.</p>
 	</div>
+	</div>
 </section>
 
 <section class="cta row">
-	<a href="#contact" name="contact"></a>
-	<img src="_img/cta.jpg" alt="" class="fill">
+	<div class="wrap">
+		<a href="#contact" name="contact"></a>
+	<!-- <img src="_img/cta.jpg" alt="" class="fill"> -->
 	<span class="more">
 		<a href="" class="activate">
 			Get in touch
@@ -81,14 +84,42 @@
 			<textarea id="message">
 				
 			</textarea>
-			<a href="#" id="submit">Submit</a>
+			<div class="buttons">
+				<a href="#" id="cancel">Cancel</a>
+				<a href="#" id="submit">Submit</a>
+			</div>
 		</form>
 	</span>
+	</div>
 </section>
 
 <script>
 		var slideIndex = 1;
 		showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
 </script>
 
 

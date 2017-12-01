@@ -1,21 +1,29 @@
 @import 'grid';
 @import 'slide';
 @keyframes slide {
-	20% { left: 15rem;}
-	100% { left: -300rem;}
+	30% {transform: scale(1.2);}
+	100% {transform: scale(.2); opacity: 0; visibility: hidden;}
 }
+// @keyframes shine {
+// 	0% {}
+// }
 body {
 	padding-top: 3rem;
 	color: #555;
-	background: linear-gradient( to bottom, #fff, #fee);
-	font-family: sans-serif;
+	background: #fff;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-weight: 400;
+	h1, h2, h3 {
+		font-weight: 600;
+		color: #00BDFF;
+	}
 }
 // Header //
 	header {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		width: 100%;
-		max-width: 1228px;
+		//max-width: 1228px; 
 		margin: 0 auto;
 		height: 3rem;
 		background-color: #fff;
@@ -58,8 +66,12 @@ body {
 			}
 		}
 	}
+.wrap {
+	max-width: 1228px;
+	margin: 0 auto;
+}
 .carousel {
-	background-color: #cde7f0;
+	background-color: #fff;
 	overflow: hidden;
 }
 .text {
@@ -115,7 +127,8 @@ body {
 	}
 }
 .info {
-	background-color: #cde7f0;
+	//background: linear-gradient( to bottom,#fff, #cde7f0, #fff) ;
+	margin-top: 2rem;
 	.pane {
 		h2 {
 			text-align: center;
@@ -148,6 +161,8 @@ body {
 .cta {
 	position: relative;
 	overflow: none;
+	min-height: 30rem;
+	background-color: #00BDFF;
 	.fill {
 		width: 100%;
 		min-width: 767px;
@@ -160,13 +175,60 @@ body {
 	}
 	.more {
 		position: absolute;
+		overflow: hidden;
+		margin: 0 auto;
 		width: 100%;
+		max-width: 1228px;
 		height: 100%;
 		display: block;
-		background-color: rgba(0,0,0,.5);
+		background-color: #fff;
 		z-index: 20;
 		top: 0;
+		right: 0;
+		bottom: 0;
 		left: 0;
+		transition: all .5s;
+		&.opened {
+			transition: all .5s;
+			&::before {
+				margin-right: 45%;
+				transform: skew(0deg);
+				transition: all .7s;
+			}
+			&::after {
+				margin-left: 45%;
+				transform: skew(0deg);
+				transition: all .7s;
+			}
+		}
+		&::before {
+			transition: all .5s;
+			content: '';
+			z-index: -1;
+			width: 100%;
+			min-width: 1000px; 
+			background-color: #00BDFF;
+			position: absolute;
+			height: 100%;
+			margin-right: -.05rem;
+			top: 0;
+			right: 50%;
+			transform: skew(45deg);
+		}
+		&::after {
+			transition: all .5s;
+			content: '';
+			z-index: -1;
+			width: 100%;
+			min-width: 1000px;
+			background-color: #00BDFF;
+			margin-left: -.05rem;
+			position: absolute;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			transform: skew(45deg);
+		}
 		.activate {
 			position: absolute;
 			transition: all .5s;
@@ -184,6 +246,11 @@ body {
 			color: #fff;
 			display: block;
 			margin: auto;
+			&:hover {
+				color: #cde7f0;
+				border-color: #cde7f0;
+				background-color: rgba(255,255,255,.5);
+			}
 			&.clicked {
 				animation: slide 1s forwards;
 			}
@@ -192,15 +259,18 @@ body {
 }
 
 #contact {
-	display: none;
+	z-index: -11;
+	position: relative;
 	width: 100%;
-	max-width: 450px;
-	margin: 2rem auto;
+	height: 100%;
+	background: #cde7f0;
+	margin: 0 auto;
 	h3 {
 		font-size: 1.5rem;
 		color: #fff;
 		text-align: center;
-		margin: 1rem auto;
+		margin: 0 auto 1rem;
+		padding-top: 1rem;
 		display: block;
 	}
 	h4 {
@@ -212,13 +282,14 @@ body {
 	}
 	input, textarea {
 		width: 80%;
+		max-width: 450px;
 		display: block;
 		margin: .5rem auto;
 		border: none;
 		height: 2rem;
-		font-size: 1.3rem;
-		background-color: rgba(255,255,255,.4);
-		color: #fff;
+		font-size: 1.1rem;
+		background-color: rgba(255,255,255,.9);
+		color: #000;
 		text-align: center;
 	}
 	textarea {
@@ -227,33 +298,53 @@ body {
 		resize: none;
 		text-align: left;
 	}
-	#submit {
-		width: 8rem;
-		height: 3.5rem;
+	.buttons {
 		display: block;
-		margin: .5rem auto;
+		width: 80%;
+		margin: 0 auto;
+		max-width: 450px;
+	}
+	#submit, #cancel {
+		width: 49%;
+		height: 3.5rem;
+		display: inline-block;
+		//margin: .5rem auto;
 		line-height: 3.5rem;
 		font-size: 1.4rem;
 		text-decoration: none;
 		color: #fff;
 		text-align: center;
-		background-color: rgba(200,255,200,.4);
-		transition: all .5s;
-		&:hover {
-			background-color: rgba(200,255,200,.7);
-		}
+		transition: all .5s;	
 	}
+		#submit {
+			float: right;
+			background-color: lightgreen;
+			&:hover {
+				opacity: .5;
+			}
+		}
+		#cancel {
+			float: left;
+			background-color: red;
+			&:hover {
+				opacity: .5;
+			}
+		}
 }
 
 footer {
 	background-color: #333;
+	.wrap {
+		background-color: #333;
+	}
 	.notes {
 		margin: 2rem auto;
 		color: #fff;
+		text-align: center;
 		li {
 			margin-bottom: .5rem;
 			a {
-				color: #ddd;
+				color: #cde7f0;
 				text-decoration: none;
 				font-style: italic;
 				&:hover {
@@ -274,7 +365,7 @@ footer {
 				display: block;
 				width: 100%;
 				height: 100%;
-				color: #fff;
+				color: #cde7f0;
 				transition: all .5s;
 				position: relative;
 				text-align: center;
@@ -319,7 +410,7 @@ footer {
 				a {
 					&:hover {
 						text-decoration: none;
-						background-color: #eee;
+						background-color: #cde7f0;
 					}
 				}
 			}

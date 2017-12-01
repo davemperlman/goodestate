@@ -150,7 +150,6 @@
 
 .container {
   width: 100%;
-  max-width: 1228px;
   margin: 0 auto; }
   .container::after, .container .row::after {
     content: '';
@@ -244,21 +243,26 @@
   to {
     opacity: 1; } }
 @keyframes slide {
-  20% {
-    left: 15rem; }
+  30% {
+    transform: scale(1.2); }
   100% {
-    left: -300rem; } }
+    transform: scale(0.2);
+    opacity: 0;
+    visibility: hidden; } }
 body {
   padding-top: 3rem;
   color: #555;
-  background: linear-gradient(to bottom, #fff, #fee);
-  font-family: sans-serif; }
+  background: #fff;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 400; }
+  body h1, body h2, body h3 {
+    font-weight: 600;
+    color: #00BDFF; }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
-  max-width: 1228px;
   margin: 0 auto;
   height: 3rem;
   background-color: #fff;
@@ -295,8 +299,12 @@ header {
         header .menu li a:hover {
           text-decoration: underline; }
 
+.wrap {
+  max-width: 1228px;
+  margin: 0 auto; }
+
 .carousel {
-  background-color: #cde7f0;
+  background-color: #fff;
   overflow: hidden; }
 
 .text {
@@ -343,7 +351,7 @@ header {
       font-style: italic; }
 
 .info {
-  background-color: #cde7f0; }
+  margin-top: 2rem; }
   .info .pane h2 {
     text-align: center;
     font-size: 1.5rem;
@@ -369,7 +377,9 @@ header {
 
 .cta {
   position: relative;
-  overflow: none; }
+  overflow: none;
+  min-height: 30rem;
+  background-color: #00BDFF; }
   .cta .fill {
     width: 100%;
     min-width: 767px;
@@ -381,13 +391,55 @@ header {
     display: inline-block; }
   .cta .more {
     position: absolute;
+    overflow: hidden;
+    margin: 0 auto;
     width: 100%;
+    max-width: 1228px;
     height: 100%;
     display: block;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #fff;
     z-index: 20;
     top: 0;
-    left: 0; }
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all .5s; }
+    .cta .more.opened {
+      transition: all .5s; }
+      .cta .more.opened::before {
+        margin-right: 45%;
+        transform: skew(0deg);
+        transition: all .7s; }
+      .cta .more.opened::after {
+        margin-left: 45%;
+        transform: skew(0deg);
+        transition: all .7s; }
+    .cta .more::before {
+      transition: all .5s;
+      content: '';
+      z-index: -1;
+      width: 100%;
+      min-width: 1000px;
+      background-color: #00BDFF;
+      position: absolute;
+      height: 100%;
+      margin-right: -.05rem;
+      top: 0;
+      right: 50%;
+      transform: skew(45deg); }
+    .cta .more::after {
+      transition: all .5s;
+      content: '';
+      z-index: -1;
+      width: 100%;
+      min-width: 1000px;
+      background-color: #00BDFF;
+      margin-left: -.05rem;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: skew(45deg); }
     .cta .more .activate {
       position: absolute;
       transition: all .5s;
@@ -405,19 +457,26 @@ header {
       color: #fff;
       display: block;
       margin: auto; }
+      .cta .more .activate:hover {
+        color: #cde7f0;
+        border-color: #cde7f0;
+        background-color: rgba(255, 255, 255, 0.5); }
       .cta .more .activate.clicked {
         animation: slide 1s forwards; }
 
 #contact {
-  display: none;
+  z-index: -11;
+  position: relative;
   width: 100%;
-  max-width: 450px;
-  margin: 2rem auto; }
+  height: 100%;
+  background: #cde7f0;
+  margin: 0 auto; }
   #contact h3 {
     font-size: 1.5rem;
     color: #fff;
     text-align: center;
-    margin: 1rem auto;
+    margin: 0 auto 1rem;
+    padding-top: 1rem;
     display: block; }
   #contact h4 {
     font-size: 1.3rem;
@@ -427,43 +486,58 @@ header {
     display: block; }
   #contact input, #contact textarea {
     width: 80%;
+    max-width: 450px;
     display: block;
     margin: .5rem auto;
     border: none;
     height: 2rem;
-    font-size: 1.3rem;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #fff;
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
     text-align: center; }
   #contact textarea {
     height: 8rem;
     font-size: 1.1rem;
     resize: none;
     text-align: left; }
-  #contact #submit {
-    width: 8rem;
-    height: 3.5rem;
+  #contact .buttons {
     display: block;
-    margin: .5rem auto;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 450px; }
+  #contact #submit, #contact #cancel {
+    width: 49%;
+    height: 3.5rem;
+    display: inline-block;
     line-height: 3.5rem;
     font-size: 1.4rem;
     text-decoration: none;
     color: #fff;
     text-align: center;
-    background-color: rgba(200, 255, 200, 0.4);
     transition: all .5s; }
+  #contact #submit {
+    float: right;
+    background-color: lightgreen; }
     #contact #submit:hover {
-      background-color: rgba(200, 255, 200, 0.7); }
+      opacity: .5; }
+  #contact #cancel {
+    float: left;
+    background-color: red; }
+    #contact #cancel:hover {
+      opacity: .5; }
 
 footer {
   background-color: #333; }
+  footer .wrap {
+    background-color: #333; }
   footer .notes {
     margin: 2rem auto;
-    color: #fff; }
+    color: #fff;
+    text-align: center; }
     footer .notes li {
       margin-bottom: .5rem; }
       footer .notes li a {
-        color: #ddd;
+        color: #cde7f0;
         text-decoration: none;
         font-style: italic; }
         footer .notes li a:hover {
@@ -480,7 +554,7 @@ footer {
         display: block;
         width: 100%;
         height: 100%;
-        color: #fff;
+        color: #cde7f0;
         transition: all .5s;
         position: relative;
         text-align: center; }
@@ -514,7 +588,7 @@ footer {
         width: 100%; }
         header .menu li a:hover {
           text-decoration: none;
-          background-color: #eee; }
+          background-color: #cde7f0; }
 
   header .mobile-nav {
     display: block;

@@ -1,5 +1,6 @@
 <footer class="row">
-    <ul class="social col-6-small">
+    <div class="wrap">
+      <ul class="social col-6-small">
       <li>
         <a href="https://www.facebook.com/luxurypropertyphotos/">
           <i class="fa fa-facebook"></i>
@@ -11,7 +12,7 @@
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="https://www.linkedin.com/in/dave-perlman-69298880/">
           <i class="fa fa-linkedin"></i>
         </a>
       </li>
@@ -29,6 +30,7 @@
         <a href="tel:2074021995">207.402.1995</a>
       </li>
     </ul>
+    </div>
 </footer>
 <div class="row copy">
   <p>
@@ -45,8 +47,8 @@ $('#contact-link').on('click', function(e){
   e.preventDefault();
   scrollToAnchor('contact');
   $('.activate').delay(1000).addClass('clicked');
-  $('#contact').delay(1000).fadeIn('slow');
-})
+  $('.more').addClass('opened');
+});
 
 $('#submit').on('click', function(e){
   e.preventDefault();
@@ -62,44 +64,26 @@ $('#submit').on('click', function(e){
   });
 });
 
+$('#cancel').on('click', function(e){
+  e.preventDefault();
+  $('.more').removeClass('opened');
+  $('.activate').removeClass('clicked');
+})
+
 $('.activate').on('click', function(e){
   e.preventDefault();
   $(this).addClass('clicked');
-  $('#contact').delay(1000).fadeIn('slow');
+  $('.more').delay(1000).addClass('opened');
 });
 
 $('.mobile-nav').on('click', function(){
   $('.menu').toggleClass('open');
 })
-
 function scrollToAnchor(aid) {
   var aTag = $("a[name='" + aid + "']");
   $('html, body').animate({scrollTop: aTag.offset().top}, 'slow');
 }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-}
 
 </script>
 </body>

@@ -1,10 +1,12 @@
 <?php require_once '_parts/header.php'; ?>
-<div class="row info about">
-	<div class="col-8-small col-small-offset-2">
+<div class="row info about" style="margin-top: 0;">
+	<div class="wrap">
+		<div class="">
 		<div class="thumbnailwrap">
 			<img src="_img/3.jpg" alt="" class="thumbnail">
 		</div>
-			<h2>About Me</h2>
+		<div class="col-8-small col-small-offset-2">
+				<h2>About Me</h2>
 		<p>
 			This company was founded on an pre-existing interest in photography, specifically landscape. As can be seen in many of my images, I enjoy adding an artistic element or incorporating external factors into an image can create a compelling or dramatic image. 
 		</p>
@@ -17,11 +19,14 @@
 		<p>
 			Thank you for stopping to visit my website. I'm easy to get in touch with and will gladly answer any questions!
 		</p>
+		</div>
+	</div>
 	</div>
 </div>
 <section class="cta row">
-	<a href="#contact" name="contact"></a>
-	<img src="_img/cta.jpg" alt="" class="fill">
+	<div class="wrap">
+		<a href="#contact" name="contact"></a>
+	<!-- <img src="_img/cta.jpg" alt="" class="fill"> -->
 	<span class="more">
 		<a href="" class="activate">
 			Get in touch
@@ -36,9 +41,13 @@
 			<textarea id="message">
 				
 			</textarea>
-			<a href="#" id="submit">Submit</a>
+			<div class="buttons">
+				<a href="#" id="cancel">Cancel</a>
+				<a href="#" id="submit">Submit</a>
+			</div>
 		</form>
 	</span>
+	</div>
 </section>
 
 
