@@ -2,17 +2,17 @@
     <div class="wrap">
       <ul class="social col-6-small">
       <li>
-        <a href="https://www.facebook.com/luxurypropertyphotos/">
+        <a target="_blank" href="https://www.facebook.com/luxurypropertyphotos/">
           <i class="fa fa-facebook"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/luxurypropertyphotos/">
+        <a target="_blank" href="https://www.instagram.com/luxurypropertyimages/">
           <i class="fa fa-instagram"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/dave-perlman-69298880/">
+        <a target="_blank" href="https://www.linkedin.com/in/dave-perlman-69298880/">
           <i class="fa fa-linkedin"></i>
         </a>
       </li>
