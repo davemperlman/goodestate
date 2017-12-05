@@ -43,6 +43,8 @@
 <script>
 
 
+// {"access_token": "6313658060.68dcd27.765ce69e41e541ea89ea7a45df6f7924", "user": {"id": "6313658060", "username": "luxurypropertyimages", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/22860876_1864106293919067_7310648380676374528_n.jpg", "full_name": "Dave Perlman", "bio": "", "website": "", "is_business": false}}
+
 $('#contact-link').on('click', function(e){
   e.preventDefault();
   scrollToAnchor('contact');

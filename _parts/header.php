@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Dave Perlman Estate Images - Professional Real Estate and Drone Photography</title>
 	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<meta name="description" content="Real Estate and Aerial photographer located in Maine. Providing excellence in exterior and interior property photos.">
+	<meta name="keywords" content="aerial shot, room photography, exterior photography, great photographers, air photo, building photography, air photography, architecture photo, interior photos, overhead photography, real estate images, interior architecture photography, aerial pictures, drone shots, maine, new england">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="_css/main.css">
